@@ -1,4 +1,5 @@
 ---
+const pageTitle = "Home page. My home page.";
 ---
 
 <html lang="en">
@@ -8,14 +9,14 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>Działa moja pierwsza strona w Astro :)</h1>
+		<h1>{pageTitle}</h1>
 		<h1>To jest zmiana, którą zrobiłam. Nie am jej jeszcze w sieci.</h1>
 	</body>
 </html>
