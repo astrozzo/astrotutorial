@@ -1,9 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home.";
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={frontmatter.title}>
 	<meta charset="utf-8" />
     <h1>{frontmatter.title}</h1>
     <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
