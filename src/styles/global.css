@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  background-color: #53747f;
+  background-color: #f3f1f1;
   font-family: sans-serif;
 }
 
@@ -38,7 +38,7 @@ h1 {
 
 /* nav styles */
 .menu {
-  background-color: #0d0950;
+  background-color: #000000;
   border: none;
   color: #fff;
   font-size: 1.2rem;
@@ -60,12 +60,12 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: #000000;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: #dbdcd0;
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
