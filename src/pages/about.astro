@@ -1,8 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import '../styles/global.css';
-
-const pageTitle = "About Me tarararara";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About.";
 
 const identity = {
     firstName: "Katarzyna",
@@ -14,21 +12,15 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "Python", "C++"];
 const happy = true;
 const finished = false;
-const goal = 3;
+const goal = 9;
 
 const skillcolor = "crimson";
 const padding = "10px";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+
+	<!--
         <style define:vars={{skillcolor, padding}}>
         h1 {
         color: rgb(61, 39, 204);
@@ -39,14 +31,27 @@ const padding = "10px";
             font-weight: bold;
         }
          </style>
-	</head>
-	<body>
-        <Header  />
+-->
+	
 
-		<h1>{pageTitle}</h1>
-		<h2>Dodałam nową podstronę.</h2>
-        <p>Tu coś będzie napisane o mnie</p>
-        <p>Here are a few facts about me:</p>
+<BaseLayout pageTitle={pageTitle}>
+
+    <style define:vars={{skillcolor, padding}}>
+        h1 {
+        color: rgb(61, 39, 204);
+        font-size: 3rem;
+        }
+        .skill{
+            color: var(--skillcolor);
+            font-weight: bold;
+        }
+     </style>
+        
+     <h1>Tytuł z kolorem tylko na tej stronie, czyli lokalny styl CSS.</h1>
+
+
+	<h2>{pageTitle}</h2>
+	<p>Here are a few facts about me:</p>
             <ul>
                 <li>My name is {identity.firstName}.</li>
                 <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
@@ -54,14 +59,15 @@ const padding = "10px";
                  <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
                 }
             </ul>
+            
         <p>My skills are:</p>
             <ul>
             {skills.map((skill) => <li class="skill">{skill}</li>)}
             </ul>
 
+            {happy && <p>I am happy to be learning Astro!</p>}
+            {finished && <p>I finished this tutorial!</p>}
+          
+            <p>My goal is to finish in {goal} days.</p>
 
-{happy && <p>I am happy to be learning Astro!</p>}
-{finished && <p>I finished this tutorial!</p>}
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}   
-	</body>
-</html>
+</BaseLayout>
